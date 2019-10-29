@@ -1,17 +1,18 @@
 a.toplinks:link, a.toplinks:visited{
 	text-decoration: none;
-	color: rgb(100,100,100);
-	font-weight: 500;
-	font-size: 12px;
-	font-stretch: 100%;
-}
-
-a.toplinks:hover, a.toplinks:active{
-	text-decoration: none;
 	color: rgb(0,0,0);
 	font-weight: 500;
 	font-size: 12px;
 	font-stretch: 100%;
+	opacity: 0.6;
+}
+
+a.toplinks:hover, a.toplinks:active{
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 12px;
+	font-stretch: 100%;
+	opacity: 1;
 }
 
 .headerlinks{
@@ -24,32 +25,47 @@ a.toplinks:hover, a.toplinks:active{
 
 .logoandsearchbar{
 	display: grid;
-	grid-template-columns: 21.15% 56.5% 9% 12%;
+	grid-template-columns: 21.15% 32.5% 9% 37%;
+	align-items: center;
 	margin-left: 10%;
 	margin-right: 10%;
 	margin-top: 1.65%;
 }
 
 .searchbox{
-	height: 35px;
+	height: 39px;
 	border-style: solid;
 	border-width: 2px;
-	border-color: rgb(255,123,0);
+	border-color: rgb(163,155,139);
 	padding-left: 10px;
 	padding-right: 10px;
 	color: rgb(150,150,150);
-	font-weight: 600;
+	font-weight: 400;
 	margin-top: 1%;
 	border-radius: 2px;
+	outline: 0;
+}
+
+.searchbox::placeholder{
+	color: rgb(150,150,150);
+}
+
+.searchbox:focus{
+	border-color: rgb(255,123,0);
+}
+
+.searchbox:focus + .searchbuttton{
+	border-color: rgb(255,123,0);
+	background-color: rgb(255,123,0);
 }
 
 .searchbuttton{
-	background-color: rgb(255,123,0);
-	border-color: rgb(255,123,0);
+	background-color: rgb(163,155,139);
+	border-color: rgb(163,155,139);
 	border-style: solid;
-	height: 40px;
+	height: 45px;
 	width: 70px;
-	margin-top: 7px;
+	margin-top: 4px;
 	border-radius: 2px;
 }
 
@@ -63,9 +79,15 @@ a.toplinks:hover, a.toplinks:active{
 	text-decoration: none;
 	font-size: 14px;
 	text-align: center;
-	height: 30px;
+	height: 37px;
 	margin-top: 5px;
-	padding-top: 15px;
+	padding-top: 4px;
+	padding-bottom: 2px;
+	padding-left: 5%;
+	margin-left: 68%;
+	display: grid;
+	grid-template-columns: 10% 10% 80%;
+	width: 120px;
 }
 
 a.lglinks:link, a.lglinks:visited{
@@ -93,6 +115,7 @@ a.lglinks:hover, a.lglinks:active{
 
 .navigationbar{
 	display: grid;
+	align-items: center;
 	grid-template-columns: 22.6% 11% 12.5% 25.3% 8% 9.5%;
 	background-color: rgb(255,123,0);
 }
@@ -107,6 +130,7 @@ a.navlinks{
 	padding-right: 10.5%;
 	border-left: 1px solid rgb(240,240,240);
 	text-align: center;
+	white-space: nowrap;
 }
 
 a.navlinks:link, a.navlinks:visited{
@@ -145,7 +169,13 @@ a.loginlink{
 	background-color: rgb(255,123,0);
 	margin-top: 6.5%;
 	margin-bottom: 8%;
-	padding-top: 7%;
+	height: 30px;
+	padding-top: 5px;
+	padding-bottom: 0px;
+	padding-left: 15%;
+	display: grid;
+	grid-template-columns: 10% 90%;
+	/*line-height: 20px;*/
 }
 
 a.loginlink:link, a.loginlink:visited{
@@ -169,11 +199,11 @@ a.sl{
 	font-weight: 600;
 }
 
-a.sl:link{
+a.sl:link, a.sl:visited{
 	color: rgb(51,122,183);
 }
 
-a.sl:hover{
+a.sl:hover, a.sl:active{
 	color: rgb(20,40,183);
 }
 
@@ -293,7 +323,7 @@ a.socialmedia:link, a.socialmedia:visited, a.socialmedia:hover, a.socialmedia:ac
 }
 
 .boxshadow{
-	width: 236px;
+	width: 100%;
 	height: 340px;
 }
 
@@ -307,6 +337,9 @@ a.socialmedia:link, a.socialmedia:visited, a.socialmedia:hover, a.socialmedia:ac
   font-size: 20px;
   margin: 4px 2px;
 	border-radius: 50%;
+	outline: 0;
+	box-shadow: 0px 0px 15px rgba(100, 100, 100, 0.2);
+	z-index: 2;
 }
 
 .button:hover{
@@ -314,6 +347,261 @@ a.socialmedia:link, a.socialmedia:visited, a.socialmedia:hover, a.socialmedia:ac
 	background-color: rgba(255,255,255,1)
 }
 
+.brdr{
+	width: 100%;
+}
+
 .brdr:hover{
-	border: 1px solid rgb(220,220,220);
+	/*border: 1px solid rgb(220,220,220);*/
+	box-shadow: 0px 0px 15px rgba(200, 200, 200, 0.3);
+	z-index: 1;
+}
+
+/*dropdown menu*/
+.menucontainer{
+	position: relative;
+  display: inline;
+	z-index: 4;
+}
+
+.menu{
+	display: block;
+  position: absolute;
+  background-color: white;
+  width: 307px;
+	font-size: 13px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+	top: 19px;
+}
+
+.menu a{
+	color: rgb(51,51,51);
+  text-decoration: none;
+	margin-left: 20px;
+}
+
+.menu a:hover{
+
+}
+
+.menuitem{
+	display: grid;
+	grid-template-columns: 10% 86.5% 3.5%;
+	align-items: center;
+}
+
+.menuimgsize{
+	width: 54px;
+	height: 50px;
+}
+
+.menuhr{
+	border-style: solid;
+	border-width: 0.5px;
+	border-color: rgb(220,220,220);
+	margin: 0px 0px 0px 0px;
+}
+
+.scrollToTopButton{
+	background-color: rgba(255,255,255,100);
+}
+
+.smileybutton{
+	background-color: rgb(11,94,177);
+	border-radius: 6px;
+	border-color: rgb(11,94,177);
+	border-style: solid;
+	outline: 0;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.5);
+	height: 37px;
+}
+
+.smileybutton:hover{
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.7);
+}
+
+.smileyface{
+	width: 0;
+  height: 0;
+  border-top: 10px solid rgb(11,94,177);
+  border-left: 10px solid transparent;
+}
+
+.smileyfacecontainer{
+	position: fixed;
+	left: 92%;
+	top: 90%;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 10% 90%;
+}
+
+.secondarymenulinks{
+	color: black;
+	font-size: 14px;
+}
+
+a.secondarymenulinks:link, a.secondarymenulinks:visited{
+	color: black;
+}
+
+a.secondarymenulinks:hover, a.secondarymenulinks:active{
+	color: rgb(255,123,0);
+}
+
+.secondarymenu{
+	position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+	padding: 40px 40px 40px 40px;
+	width: 830px;
+	height: 480px;
+	left: 307px;
+	top: 0px;
+	display: grid;
+	grid-template-columns: 33% 33% 33%;
+
+	overflow-y: scroll;
+}
+
+.secondarymidlinks{
+	position: relative;
+	left: 30px;
+	text-align: center;
+	color: black;
+}
+
+a.secondarymidlinks:link, a.secondarymidlinks:visited{
+	color: black;
+}
+
+a.secondarymidlinks:hover, a.secondarymidlinks:active{
+	color: rgb(255,123,0);
+}
+
+.triangleleft {
+		 width: 0;
+		 height: 0;
+		 border-top: 5px solid transparent;
+		 border-right: 10px solid rgb(255,123,0);;
+		 border-bottom: 5px solid transparent;
+}
+
+.darkoverlay{
+	background-color: rgba(0,0,0,0.6);
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	height: 3000px;
+}
+
+.markalarmenu{
+	background-color: white;
+	position: absolute;
+	width: 1185px;
+	height: 320px;
+	margin-top: 0px;
+	z-index: 5;
+	left: 160px;
+	padding-top: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.largebuttons{
+	background-color: rgb(255,123,0);
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+}
+
+.largebuttons:hover{
+	background-color: rgb(204,98,0);
+}
+
+.largebuttonsimg{
+	width: 40px;
+	height: 40px;
+	position: relative;
+	left: 10px;
+	top: 10px;
+}
+
+.experiencemenu{
+	background-color: white;
+	position: fixed;
+	left: 73.5%;
+	top: 58%;
+	width: 300px;
+	height: 160px;
+	z-index: 5;
+	padding-top: 45px;
+	padding-left: 15px;
+	padding-right: 15px;
+	box-shadow: 0px 10px 40px 0px rgba(0,0,0,0.5);
+}
+
+.experiencebuttonscontainer{
+	opacity: 1;
+}
+
+.experiencebuttonscontainer:hover{
+	opacity: 0.5;
+}
+
+.experiencebuttons2{
+	border: none;
+	background-color: white;
+	color: white
+}
+
+.experiencebuttons2:hover a{
+	color: rgb(100,100,100);
+}
+
+.experiencebuttons{
+	width: 45px;
+	opacity: 0.5;
+}
+
+.experiencebuttons:hover{
+	opacity: 1;
+}
+
+.experiencetext{
+	font-size: 12px;
+	color: white;
+	text-align: center;
+}
+
+.experiencetext:hover{
+	color: rgb(100,100,100);
+}
+
+.smileyx{
+	color: white;
+	font-size: 20px;
+	margin-left: 6px;
+	margin-right: 6px;
+}
+
+.pageindicatorgeneral{
+	border-width: 0px;
+	border-style: solid;
+	border-radius: 50%;
+	width: 7px;
+	height: 7px;
+	display: block;
+	position: relative;
+}
+
+.pageindicatoractive{
+	background-color: rgba(0,0,0,1);
+}
+
+.pageindicatorpassive{
+	background-color: rgba(0,0,0,0.3);
 }

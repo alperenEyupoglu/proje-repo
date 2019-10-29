@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Üye Girişi | Teknosa</title>
+		<link rel="stylesheet" href="..\s.css">
+		<link rel="stylesheet" href="uyegirisi.css">
+		<link rel="icon" href="..\img\favicon-32x32.png">
+		<script src="..\vuejs\vue.js"></script>
+	</head>
+	<body style="font-family: proxima-nova, sans-serif;font-style: normal;">
+		<div id="indexscript">
+			<scroll-button></scroll-button>
+			<smiley-button :pref="true"></smiley-button>
+
+			<div class="logoandsearchbar" style="margin-top: 50px;margin-bottom: 15px;">
+				<a href="..\index.html">
+					<img src="..\img\teknosa-logo.svg" alt="Logo" style="width:216px;height:58px;">
+				</a>
+			</div>
+
+			<div style="background-color: rgb(243,243,243);">
+				<div style="margin-left: 23.5%;height: 1000px;">
+					<div class="uyeolpanel" style="height: 805px;">
+						<span style="font-size: 21px;"><b>Ücretsiz Üye Ol</b></span><br><br><hr class="menuhr"><br>
+						<span class="titletext"><b>Adınız</b></span>
+						<span style="margin-left: 115px;" class="titletext"><b>Soyadınız</b></span><br>
+						<input style="width: 40%;" v-model="textboxentries[0]" v-on:blur="checkifempty(0)" class="textboxesgeneral" v-bind:class="textboxempty[0] ? 'textboxeserror': 'textboxes'" type="text">
+						<input style="width: 40%;margin-left:5px;" v-model="textboxentries[1]" v-on:blur="checkifempty(1)" class="textboxesgeneral" v-bind:class="textboxempty[1] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span class="errortext" v-bind:class="textboxempty[0] ? 'errortextvisible' : 'errortexthidden'"><b>Adınızı Giriniz</b></span>
+						<span style="margin-left: 75px;" class="errortext" v-bind:class="textboxempty[1] ? 'errortextvisible' : 'errortexthidden'"><b>Soyadınızı Giriniz</b></span><br><br>
+
+						<span class="titletext"><b>E-Posta Adresiniz</b></span><br>
+						<input style="width: 98%;" v-model="textboxentries[2]" v-on:blur="checkifempty(2)" class="textboxesgeneral" v-bind:class="textboxempty[2] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span class="errortext" v-bind:class="textboxempty[2] ? 'errortextvisible' : 'errortexthidden'"><b>E-Posta Adresinizi Yazın</b></span><br><br>
+
+						<span class="titletext"><b>Doğum Tarihiniz</b></span><br>
+						<select style="width: 32%;" name="Gun" v-model="textboxentries[3]" v-on:blur="checkifempty(3)" class="textboxesgeneral" v-bind:class="textboxempty[3]||textboxempty[4]||textboxempty[5] ? 'textboxeserror': 'textboxes'" type="text">
+							<option selected disabled>GÜN</option>
+							<option v-for="day in range">{{day}}</option>
+						</select>
+
+						<select style="width: 32%;" name="Ay" v-model="textboxentries[4]" v-on:blur="checkifempty(4)" class="textboxesgeneral" v-bind:class="textboxempty[3]||textboxempty[4]||textboxempty[5] ? 'textboxeserror': 'textboxes'" type="text">
+							<option selected disabled>AY</option>
+							<option v-for="month in monthrange">{{month}}</option>
+						</select>
+
+						<select style="width: 32%;" name="Yil" v-model="textboxentries[5]" v-on:blur="checkifempty(5)" class="textboxesgeneral" v-bind:class="textboxempty[3]||textboxempty[4]||textboxempty[5] ? 'textboxeserror': 'textboxes'" type="text">
+							<option selected disabled>YIL</option>
+							<option v-for="year in yearrange">{{year}}</option>
+						</select><br>
+						<span class="errortext" v-bind:class="textboxempty[3]||textboxempty[4]||textboxempty[5] ? 'errortextvisible' : 'errortexthidden'"><b>Doğum Tarihinizi Eksiksiz Giriniz</b></span><br><br>
+
+						<span class="titletext"><b>Şifreniz</b></span><br>
+						<input style="width: 98%;" type="password" v-model="textboxentries[6]" v-on:blur="checkifempty(6)" class="textboxesgeneral" v-bind:class="textboxempty[6] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span  v-if="!textboxempty[6]"><span class="titletext">Şifrenizin uzunluğu en az 6 karakter olmalıdır.</span><br><br></span>
+						<span  v-if="textboxempty[6]"><span class="errortext"><b>Şifreniz En Az 6 Karakter Olmalıdır.</b></span><br><br></span>
+
+						<span class="titletext"><b>Cep Telefonu Numaranız</b></span><br>
+						<input v-on:input="modifyPhoneNumber" maxlength="15" style="width: 98%;" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" required placeholder="(5_) __ _" v-model="textboxentries[7]" v-on:blur="checkifempty(7)" class="textboxesgeneral" v-bind:class="textboxempty[7] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span class="errortext" v-bind:class="textboxempty[7] ? 'errortextvisible' : 'errortexthidden'"><b>Telefon Numaranızı Giriniz</b></span><br><br>
+
+						<div style="display: grid;grid-template-columns: 10% 90%;">
+							<button v-on:click="checkboxchecked = !checkboxchecked" class="agreecheckbox" v-bind:class="checkboxchecked ? 'checkedcheckbox' : 'uncheckedcheckbox'"><b>✓</b></button>
+							<span class="titletext" style="font-size: 13px;font-weight: 600;"><a href="#" class="loginpagelinks">Aydınlatma Metni</a>'ni Okudum Ve Kampanyalardan Haberdar Olmak İçin <a href="#" class="loginpagelinks">Açık Rıza Metni</a> Kapsamında Yukarda İlettiğim
+																		İletişim Bilgilerime Elektronik İleti Gönderilmesini Kabul Ediyorum.</span><br><br>
+						</div>
+
+						<button class="loginbuttonclass">Onay Kodu İste</button><br><br>
+
+						<span class="titletext">Üye ol butonuna basarak</span>
+						<a href="#" class="loginpagelinks2">Üyelik Sözleşmesini,</a>
+						<a href="#" class="loginpagelinks2">Gizlilik ve Çerez Politikasını,</a>
+						<a href="#" class="loginpagelinks2">Aydınlatma Metnini</a>
+						<span class="titletext">okuduğunuzu ve kabul etiğinizi onaylıyorsunuz.</span>
+					</div>
+
+					<div class="uyeolpanel" style="position: relative;height: 380px;left: 470px;top: -805px;">
+						<span style="font-size: 21px;"><b>Üye Girişi</b></span><br><br><hr class="menuhr"><br>
+						<span class="titletext"><b>E-Posta Adresiniz</b></span><br>
+						<input style="width: 98%;" v-model="textboxentries[8]" v-on:blur="checkifempty(8)" class="textboxesgeneral" v-bind:class="textboxempty[8] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span class="errortext" v-bind:class="textboxempty[8] ? 'errortextvisible' : 'errortexthidden'"><b>E-Posta Adresinizi Giriniz</b></span><br><br>
+
+						<span class="titletext"><b>Şifreniz</b></span><br>
+						<input style="width: 98%;" type="password" v-model="textboxentries[9]" v-on:blur="checkifempty(9)" class="textboxesgeneral" v-bind:class="textboxempty[9] ? 'textboxeserror': 'textboxes'" type="text"><br>
+						<span class="errortext" v-bind:class="textboxempty[9] ? 'errortextvisible' : 'errortexthidden'"><b>Şifrenizi Giriniz</b></span><br><br>
+
+						<button class="loginbuttonclass">Giriş Yap</button><br><br>
+						<a href="#" class="loginpagelinks2" style="position: relative;left: 68%;">Şifremi Unuttum</a>
+					</div>
+
+					<div class="invisiblepanel">
+						<span style="font-size: 21px;"><b>Neden Üye Olmalıyım?</b></span><br>
+						<div style="display: grid;grid-template-columns: 25% 100%;padding-left: 15px;padding-top: 10px;">
+							<img style="width: 58px;" src="..\img\bell.png">
+							<span style="margin-top: 10px;" class="titletext">Teknosa.com webe özel indirimler, anlık fırsatlar, öğlen ve gece kampanyalarından ilk sizin haberiniz olsun.</span>
+							<img style="width: 58px;margin-top: 22px;" src="..\img\tag.png">
+							<span style="margin-top: 35px;" class="titletext">Size özel fiyatlar ve kampanyalardan haberdar olmak için üyeliğinizi ücretsiz tamamlayın.</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<script src="..\index.js"></script>
+	</body>
+</html>

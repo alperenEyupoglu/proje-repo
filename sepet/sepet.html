@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Sepet | Teknosa</title>
+		<link rel="stylesheet" href="..\s.css">
+		<link rel="stylesheet" href="sepet.css">
+		<link rel="stylesheet" href="..\uyegirisi\uyegirisi.css">
+		<link rel="icon" href="..\img\favicon-32x32.png">
+		<script src="..\vuejs\vue.js"></script>
+	</head>
+	<body style="font-family: proxima-nova, sans-serif;font-style: normal;">
+		<div id="indexscript">
+			<scroll-button></scroll-button>
+			<smiley-button :pref="true"></smiley-button>
+
+			<div class="logoandsearchbar" style="margin-top: 50px;margin-bottom: 15px;grid-template-columns: 53% 50%;">
+				<a href="..\index.html">
+					<img src="..\img\teknosa-logo.svg" alt="Logo" style="width:216px;height:58px;">
+				</a>
+
+				<span style="display: grid;grid-template-columns: 76px 140px 100px 140px 16.6%;">
+					<a href="#" class="largebuttons" style="text-decoration: none;color: white;font-size: 25px;width: 45px;height: 45px;"><b style="position: relative;left: 15px;top: 7px;">1</b></a>
+					<hr class="menuhr" style="height: 0px;top: 20px;position: relative;">
+					<a href="#" class="largebuttons asamalinks"><b style="position: relative;left: 15px;top: 7px;">2</b></a>
+					<hr class="menuhr" style="height: 0px;top: 20px;position: relative;">
+					<a href="#" class="largebuttons asamalinks"><b style="position: relative;left: 15px;top: 7px;">3</b></a>
+					<span class="sepettext" style="color: rgb(255,123,0);position: relative;left: -5px;top: 5px;"><b>SEPETİM</b></span>
+					<span></span>
+					<span class="sepettext" style="position: relative;top: 5px;left: 20px;"><b>TESLİMAT</b></span>
+					<span></span>
+					<span class="sepettext" style="position: relative;top: 5px;left: 25px;"><b>ÖDEME</b></span>
+				</span>
+			</div>
+
+			<div style="background-color: rgb(243,243,243);margin-top: 30px;height: 800px;">
+				<div class="uyeolpanel" style="height: 160px;width: 60%;padding: 15px 0px 0px 0px;position: relative;left: 10%;top: 20px;">
+					<span style="font-size: 19px;margin-left: 30px;"><b>Sepetimdeki Ürünler</b></span>
+					<img src="..\img\blackcart.png" style="width: 32px;position: relative;top: 6px;">
+					<br><br><hr class="menuhr"><br>
+					<div style="display: grid;grid-template-columns: 11% 61.5% 15% 7% 1%;">
+						<img src="..\img\vacuumcleaner.jpg" style="width: 60px;margin-left: 30px;">
+
+						<span style="margin-top: 10px;">
+							<span style="white-space: nowrap;font-size: 13px;">Rowenta RO3751 Compact 3A Enerji Sınıfı Toz Torbasız Elektrikli Süpürge</span><br>
+							<span style="font-size: 12px;color: rgb(151,151,151);">Adrese Teslimat</span>
+						</span>
+
+						<select class="textboxesgeneral textboxes" style="margin-top: 15px;width: 50px;">
+							<option>1</option>
+						</select>
+
+						<span style="font-size: 16px;margin-top: 15px;"><b>749 TL</b></span>
+
+						<button class="xbutton"><b>X</b></button>
+					</div>
+				</div>
+
+				<div class="uyeolpanel" style="height: 120px;width: 250px;padding: 15px 15px 15px 15px;position: relative;left: 71%;top: -155px;">
+					<span style="font-size: 17px;"><b>Sipariş Özeti</b></span><br><br>
+					<span style="font-size: 14px;">Ara Toplam</span>
+					<span style="font-size: 14px;margin-left: 120px;">749 TL</span><br><br>
+					<span style="font-size: 14px;">İndirimler</span>
+					<span style="font-size: 14px;margin-left: 120px;">-37,45 TL</span><br>
+					<span style="font-size: 14px;">Toplam Tutar</span>
+					<span style="font-size: 14px;margin-left: 95px;"><b>711,55 TL</b></span>
+				</div>
+
+				<div class="uyeolpanel" style="height: 75px;width: 58%;position: relative;left: 10%;top: -120px;padding: 0;padding-left: 30px;padding-top: 15px;">
+					<span style="white-space: nowrap;font-size: 13px;position: relative;top: 0%;">Kampanya Kodu</span>
+					<input class="textboxesgeneral textboxes" type="text" placeholder="Kodu Giriniz" style="margin-left: 2%;width: 30%;">
+					<button class="uygulabuttonclass">Uygula</button>
+				</div>
+
+				<button v-on:click="redirect" style="position: relative;left: 71%;top: -235px;width: 280px;" class="loginbuttonclass">
+					<p style="position:relative;left: 0px;top: -3px;">DEVAM ET</p>
+					<p style="position:relative;left: 120px;top: -60px;font-size:30px;">></p>
+				</button>
+
+				<div style="position: relative; top: -180px;">
+					<sliding-menu :pref="true" img0="img/f6.png" img1="img/f1.png" img2="img/f2.png" img3="img/f3.png" img4="img/f4.png" img5="img/f1.png" img6="img/f0.png" img7="img/f2.png" img8="img/f3.png" img9="img/f8.png" title="Sepetinize Bunları da Ekleyebilirsiniz"></sliding-menu>
+				</div>
+			</div>
+
+			<div style="background-color: rgb(243,243,243)">
+				<button v-on:click="toggleFooter" class="smileybutton" style="color: white;font-size: 15px;"><b>{{footerbuttontext}}</b></button>
+			</div>
+
+			<div v-if="showfooter">
+				<div style="position: relative;">
+					<hr style="border-top: 4px solid rgb(34,58,141);width: 100%;position:absolute;">
+					<img src="..\img\sabanci-logo.png" style="width: 39px;height: 20px;position:absolute;margin-left: 48.6%">
+				</div>
+
+				<br>
+
+				<div class="tenpercent" style="margin-top: 13px;margin-bottom: 35px;display: grid;grid-template-columns: 77.5% 8.8% 8.8% 8.8%;">
+					<p style="font-size: 14px;color: rgb(119,119,119);">Copyright © 2000-2019 <b>Teknosa.com</b>,Her hakkı saklıdır.</p>
+					<img src="..\img\verisign-logo.png">
+					<img src="..\img\credit-card-mastercard.png" style="margin-top: 8px;">
+					<img src="..\img\troy-logo.png" style="margin-top: 8px;">
+				</div>
+			</div>
+
+		</div>
+
+		<script src="..\index.js"></script>
+	</body>
+</html>

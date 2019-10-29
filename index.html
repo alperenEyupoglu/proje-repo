@@ -9,22 +9,25 @@
 	</head>
 	<body style="font-family: proxima-nova, sans-serif;font-style: normal;">
 		<div id="indexscript">
+			<scroll-button></scroll-button>
+			<smiley-button :pref="false"></smiley-button>
+
 			<div class="headerlinks">
-				<a class="toplinks" title="Mağaza Bul" href="https://www.teknosa.com/magaza-bul">Mağaza Bul</a>
-				<a class="toplinks" title="Kargom Nerede?" href="https://www.teknosa.com/">Kargom Nerede?</a>
-				<a class="toplinks" title="Siparişlerim" href="https://www.teknosa.com/hesabim/siparislerim">Siparişlerim</a>
-				<a class="toplinks" title="Yardım Merkezi" href="https://www.teknosa.com/yardim-merkezi">Yardım Merkezi</a>
-				<a class="toplinks" title="Garanti & İade" href="https://www.teknosa.com/garanti-iade">Garanti & İade</a>
-				<a class="toplinks" title="İletişim" href="https://www.teknosa.com/kurumsal/iletisim/">İletişim</a>
+				<a style="position: relative;top: -3px;" class="toplinks" title="Mağaza Bul" href="#"><img style="width: 20px;" src="img\magazalaricon - kucuk.png"><span style="position: relative;top: -5px;left: 3px;">Mağaza Bul</span></a>
+				<a style="position: relative;top: -1px;left: -10px;" class="toplinks" title="Kargom Nerede?" href="#"><img style="width: 15px;" src="img\aynigun - kucuk.png"><span style="position: relative;top: -3px;left: 5px;">Kargom Nerede?</span></a>
+				<a class="toplinks" title="Siparişlerim" href="#">Siparişlerim</a>
+				<a class="toplinks" title="Yardım Merkezi" href="#">Yardım Merkezi</a>
+				<a class="toplinks" title="Garanti & İade" href="#">Garanti & İade</a>
+				<a class="toplinks" title="İletişim" href="#">İletişim</a>
 			</div>
 
 			<div class="logoandsearchbar">
-				<a href="https://www.teknosa.com/">
+				<a href="index.html">
 					<img src="img\teknosa-logo.svg" alt="Logo" style="width:216px;height:58px;">
 				</a>
 				<input type="text" class="searchbox" placeholder="Teknosa.com'da ara">
 				<button class="searchbuttton"><img src="img\search.png" alt="search"></button>
-				<a class="cartlink" href="https://www.teknosa.com/sepet">{{writetext}}</a>
+				<a class="cartlink" href="sepet\sepet.html"><img src="img\carticon.png" style="width: 35px;"><span style="font-size: 13px;color: white;position: relative; left: 60%;"><b>{{writetext}}</b></span><span style="margin-top: 10px;">Sepetim</span></a>
 			</div>
 
 			<div class="belowlogolinks">
@@ -36,13 +39,609 @@
 
 			<div style="background-color: rgb(243,243,243)">
 				<div class="navigationbar">
-					<a class="navlinks" style="margin-left: 45%;" href="#">TÜM ÜRÜNLER</a>
-					<a class="navlinks" href="#">MARKALAR</a>
+
+
+					<!--<a class="navlinks" style="margin-left: 45%;" href="#">TÜM ÜRÜNLER</a>-->
+					<span class="menucontainer" v-on:mouseleave="showmenu = false">
+		  			<a v-on:mouseover="showmenu = true" class="navlinks" style="margin-left: 45%;z-index: 1;display: block;" href="#">TÜM ÜRÜNLER</a>
+		  			<div v-if="showmenu" v-on:mouseleave="showsecondarymenu = -1" class="menu" style="margin-left: 45%;margin-top: 40px;">
+							<!--secondary menu 0-->
+							<div v-if="showsecondarymenu == 0" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 45%;">
+									<a class="secondarymenulinks" href="#"><b>LED Televizyonlar</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Monitör TV / LED Ekran</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Hoparlörler</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Bluetooth Hoparlör</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Soundbar</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Amfili Hoparlör</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Uydu Alıcı ve Aksesuarları</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Televizyon Aksesuarları</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 50%;">
+									<a class="secondarymenulinks" href="#"><b>Ev Sinema Sistemleri</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Sinema Sistemi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">DVD ve Blu-Ray Oynatıcı</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Müzik ve Ses Sistemleri</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Projeksiyon Cihazları</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Oto Ürünleri ve Sistemleri</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Piller ve Şarj Cihazları</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Piller</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Pil Şarj Cihazları</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<a href="#"><img src="img\tv.jpg"></a>
+								</span>
+							</div>
+
+
+							<!--secondary menu 1-->
+							<div v-if="showsecondarymenu == 1" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 90%;">
+									<a class="secondarymenulinks" href="#"><b>Cep Telefonu</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Android Telefonlar</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">iPhone iOS Telefonlar</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Diğer Telefonlar</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Giyilebilir Teknoloji</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Cep Telefonu Aksesuarları</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Taşınabilir Şarj Cihazları</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kılıf ve Koruyucular</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Şarj Cihazları</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Araç Kitleri</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Kulaklıklar</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kulak İçi Kulaklık</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kulak Üstü Kulaklık</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Bluetooth Kulaklık</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Telsiz ve Masaüstü Telefonlar</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 50% 50%;">
+									<span>
+										<a href="#"><img src="img\phonepic (1).jpg"></a>
+										<a href="#" class="secondarymidlinks">Samsung<br>Galaxy Note 10</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\phonepic (2).jpg"></a>
+										<a href="#" class="secondarymidlinks">Apple<br>iPhone 11</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\phonepic (3).jpg"></a>
+										<a href="#" class="secondarymidlinks">Huawei<br>Mate 20</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\phonepic (4).jpg"></a>
+										<a href="#" class="secondarymidlinks">Xiaomi<br>Redmi 7</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\phonepic (5).jpg"></a>
+										<a href="#" class="secondarymidlinks">Oppo<br>Reno Z</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\phonepic (6).jpg"></a>
+										<a href="#" class="secondarymidlinks">Vestel<br>Venus Z30</a>
+									</span>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<a href="#"><img src="img\thirdbarpic (4).jpg"></a>
+								</span>
+							</div>
+
+
+							<!--secondary menu 2-->
+							<div v-if="showsecondarymenu == 2" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 90%;">
+									<a class="secondarymenulinks" href="#"><b>Notebook / Laptop</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Notebook</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">MacBook</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">2'si 1 Arada Notebook</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Oyun Bilgisayarı / Gaming Notebook</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Masaüstü Bilgisayar</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">iMac</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">All-in-One Bilgisayar</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Tablet</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Ofis ve Sarf Malzemeleri</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Toner ve Kartuş</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kağıt</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Ağ, Modemler</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Modemler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Menzil Arttırıcı</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 50%;">
+									<a class="secondarymenulinks" href="#"><b>Çevre Birimleri</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Mouse</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Klavye</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kulaküstü Kulaklık</a>
+									</span>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Bluetooth Kulaklık</a>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kablo ve Adaptör</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Bilgisayar Hoparlörü</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Oyuncu Aksesuarları</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Klavyesi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Mouse ve Mousepad</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Kulaklıkları</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>iMac ve MacBook Aksesuarları</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Notebook Aksesuarları</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Tablet ve iPad Aksesuarları</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Yazılım Ürünleri</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<span style="display: grid;grid-template-columns: 50% 50%;">
+										<span>
+											<a href="#"><img src="img\mmthirdbar (3).jpg"></a>
+											<a href="#" class="secondarymidlinks">Monitör</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (4).jpg"></a>
+											<a href="#" class="secondarymidlinks">Tablet</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (2).jpg"></a>
+											<a href="#" class="secondarymidlinks">Yazıcılar</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (1).jpg"></a>
+											<a href="#" class="secondarymidlinks">Veri Depolama</a>
+										</span>
+									</span>
+									<a href="#"><img src="img\thirdbarpic (1).jpg"></a>
+								</span>
+							</div>
+
+
+							<!--secondary menu 3-->
+							<div v-if="showsecondarymenu == 3" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 75%;">
+									<a class="secondarymenulinks" href="#"><b>Buzdolabı</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Çift Kapılı</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Gardrop Tipi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Büro Tipi Buzdolabı</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Derin Dondurucu</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Çamaşır ve Kurutma Makinesi</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Çamaşır Makinesi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kurutma Makinesi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kurutmalı Çamaşır Makinesi</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Bulaşık Makinesi</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Fırın ve Ocak</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Midi ve Mini Fırın</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Mikrodalga Fırın</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ocak</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 60%;">
+									<a class="secondarymenulinks" href="#"><b>Ankastre Ürünler</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ankastre Fırın</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ankastre Ocak</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ankastre Davlumbaz</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Isıtma ve Soğutma</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Klima</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Vantilatör</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Soba ve Isıtıcı</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Şofben</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Davlumbaz</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Su Sebili</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<span style="display: grid;grid-template-columns: 50% 50%;">
+										<span>
+											<a href="#"><img src="img\mmthirdbar (6).jpg"></a>
+											<a href="#" class="secondarymidlinks">Bulaşık Makinesi</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (5).jpg"></a>
+											<a href="#" class="secondarymidlinks">Fırın ve Ocak</a>
+										</span>
+									</span>
+									<a href="#"><img src="img\thirdbarpic (2).jpg"></a>
+									<a href="#"><img src="img\thirdbarpic (3).jpg"></a>
+								</span>
+							</div>
+
+
+							<!--secondary menu 4-->
+							<div v-if="showsecondarymenu == 4" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 80%;">
+									<a class="secondarymenulinks" href="#"><b>Süpürgeler</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Toz Torbasız Süpürgeler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Toz Torbalı Süpürgeler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Robot Süpürgeler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Dikey Süpürgeler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Şarjlı Süpürgeler</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Buharlı Temizleyici</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Halı Yıkama Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Süpürge Aksesuarları</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Basınçlı Yıkama Makineleri</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Blender</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Mikser</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Tost Makineleri</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Fritözler</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Meyve Sıkıcılar</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 85%;">
+									<a class="secondarymenulinks" href="#"><b>Ütüler</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Buharlı Ütü</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Buhar Kazanlı Ütü</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ütü Masası</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Çay Makineleri</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Kahve Makineleri ve Aksesuarları</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Türk Kahvesi Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Filtre Kahve Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kapsüllü Kahve Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Espresso & Cappuccino Kahve Makineleri</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Pişirici ve Tencereler</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Pişiriciler</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Barbeküler</a>
+									</span>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Elektrikli Izgaralar</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Tencere ve Tavalar</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Su Isıtıcısı ve Kettle</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Hava Nemlendirici ve Temizleyici</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<span style="display: grid;grid-template-columns: 50% 50%;">
+										<span>
+											<a href="#"><img src="img\mmthirdbar (7).jpg"></a>
+											<a href="#" class="secondarymidlinks">Elektrikli Süpürge</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (11).jpg"></a>
+											<a href="#" class="secondarymidlinks">Ütü</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (8).jpg"></a>
+											<a href="#" class="secondarymidlinks">Filtre Kahve Makinesi</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (12).jpg"></a>
+											<a href="#" class="secondarymidlinks">Blender Set</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (9).jpg"></a>
+											<a href="#" class="secondarymidlinks">Meyve Sıkacağı</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (10).jpg"></a>
+											<a href="#" class="secondarymidlinks">Tost Makinesi</a>
+										</span>
+									</span>
+								</span>
+							</div>
+
+
+							<!--secondary menu 5-->
+							<div v-if="showsecondarymenu == 5" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 95%;">
+									<a class="secondarymenulinks" href="#"><b>Playstation 4 (PS4)</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Konsol</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyun</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Aksesuar</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Xbox One</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Konsol</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyun</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Aksesuar</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Nintendo</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Konsol</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyun</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Aksesuar</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Oyuncu Aksesuarları</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Klavyesi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Mouse ve Mousepad</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncu Kulaklıkları</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Hobi ve Eğlence</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Eğitici Oyuncaklar ve Bilim Setleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Akıllı Oyuncaklar</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Uzaktan Kumandalı Oyuncaklar</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Müzik Enstrümanları</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Film ve Müzik</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ödeme Kartları</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 50% 50%;height: 45%;">
+									<span>
+										<a href="#"><img src="img\consolepic (1).jpg"></a>
+										<a href="#" class="secondarymidlinks">Playstation 4</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\consolepic (2).jpg"></a>
+										<a href="#" class="secondarymidlinks">Xbox</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\consolepic (3).jpg"></a>
+										<a href="#" class="secondarymidlinks">Konsol Oyun</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\consolepic (4).jpg"></a>
+										<a href="#" class="secondarymidlinks">Drone</a>
+									</span>
+								</span>
+
+								<span>
+									<a href="#"><img src="img\thirdbarpic (5).jpg"></a>
+									<a href="#"><img src="img\thirdbarpic (6).jpg"></a>
+								</span>
+							</div>
+
+
+							<!--secondary menu 6-->
+							<div v-if="showsecondarymenu == 6" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 45%;">
+									<a class="secondarymenulinks" href="#"><b>Oyuncak</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Peluş Oyuncak</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Çocuk Oyuncakları</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Figür Set</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Bebek</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Oyuncak Araba</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Tsum Tsum</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Tekstil</b></a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Havlu</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Battaniye</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 50%;">
+									<a class="secondarymenulinks" href="#"><b>Okul Ürünleri</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Beslenme Çantası</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Defter Set</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kalem Set</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Matara</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Pipetli Bardak</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Sırt Çantası</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Beslenme Grubu</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Tabak</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kase</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Çatal Kaşık Seti</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+									<span style="display: grid;grid-template-columns: 50% 50%;">
+										<span>
+											<a href="#"><img src="img\mmthirdbar (14).jpg"></a>
+											<a href="#" class="secondarymidlinks">Okul Ürünleri</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (16).jpg"></a>
+											<a href="#" class="secondarymidlinks">Tekstil</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (13).jpg"></a>
+											<a href="#" class="secondarymidlinks">Beslenme Grubu</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (15).jpg"></a>
+											<a href="#" class="secondarymidlinks">Pelüş Oyncak</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (18).jpg"></a>
+											<a href="#" class="secondarymidlinks">Oyuncak Araba</a>
+										</span>
+										<span>
+											<a href="#"><img src="img\mmthirdbar (17).jpg"></a>
+											<a href="#" class="secondarymidlinks">Bebek</a>
+										</span>
+									</span>
+								</span>
+							</div>
+
+
+							<!--secondary menu 7-->
+							<div v-if="showsecondarymenu == 7" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 40%;">
+									<a class="secondarymenulinks" href="#"><b>Akıllı Ampul</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Akıllı Prizler</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Akıllı Sensörler</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Akıllı Ev Seti</b></a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Akıllı Kumanda ve Asistanlar</b></a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 50% 50%;height: 45%;">
+									<span>
+										<a href="#"><img src="img\smarthomepic (1).jpg"></a>
+										<a href="#" class="secondarymidlinks">Akıllı<br>Ampul</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\smarthomepic (2).jpg"></a>
+										<a href="#" class="secondarymidlinks">Akıllı<br>Priz</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\smarthomepic (3).jpg"></a>
+										<a href="#" class="secondarymidlinks">Akıllı<br>Ev Seti</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\smarthomepic (4).jpg"></a>
+										<a href="#" class="secondarymidlinks">Akıllı<br>Sensörler</a>
+									</span>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+
+								</span>
+							</div>
+
+
+							<!--secondary menu 8-->
+							<div v-if="showsecondarymenu == 8" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 70%;">
+									<a class="secondarymenulinks" href="#"><b>Erkek Tıraş Ürünleri</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Tıraş Makinesi</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Saç, Sakal ve Vücut Tüyü Kesme Makineleri</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Saç Bakım</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Fön Makineleri</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Saç Kurutma Makineleri</a>
+									</span>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Saç Maşaları</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Saç Şekillendiriciler</a>
+									</span>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Saç Düzleştiriciler</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Epilasyon Ürünleri</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Epilatörler</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">IPL Cihazları</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Sağlık Ürünleri</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Baskül ve Terazi</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Ağız ve Diş Bakımı</a>
+									</span>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 50% 50%;height: 45%;">
+									<span>
+										<a href="#"><img src="img\personalcarepic (1).jpg"></a>
+										<a href="#" class="secondarymidlinks">Erkek Tıraş<br>Ürünleri</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\personalcarepic (2).jpg"></a>
+										<a href="#" class="secondarymidlinks">Epilasyon<br>Ürünleri</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\personalcarepic (3).jpg"></a>
+										<a href="#" class="secondarymidlinks">Saç Bakım<br>Ürünleri</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\personalcarepic (4).jpg"></a>
+										<a href="#" class="secondarymidlinks">Sağlık<br>Ürünleri</a>
+									</span>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+
+								</span>
+							</div>
+
+
+							<!--secondary menu 9-->
+							<div v-if="showsecondarymenu == 9" class="secondarymenu">
+								<span style="display: grid; grid-template-columns: 100%;height: 60%;">
+									<a class="secondarymenulinks" href="#"><b>Fotoğraf Makinesi</b></a><br>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">SLR Fotoğraf Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Dijital Fotoğraf Makineleri</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Kompakt Fotoğraf Makineleri</a><br><br>
+									<a class="secondarymenulinks" href="#"><b>Kamera</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Aksiyon Kamera</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Dijital Video Kamera</a>
+									</span><br><br>
+									<a class="secondarymenulinks" href="#"><b>Fotoğraf Makinesi Aksesuarları</b></a><br>
+									<span>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Tripod</a>
+										<a class="secondarymenulinks" style="font-size: 13px;" href="#">Çanta</a>
+									</span>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Hafıza Kartı ve Kart Okuyucu</a>
+									<a class="secondarymenulinks" style="font-size: 13px;" href="#">Aksiyon Kamera Aksesuarları</a>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 50% 50%;height: 45%;">
+									<span>
+										<a href="#"><img src="img\camerapic (1).jpg"></a>
+										<a href="#" class="secondarymidlinks">SLR Fotoğref<br>Makinesi</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\camerapic (2).jpg"></a>
+										<a href="#" class="secondarymidlinks">Kompakt Fotoğraf<br>Makinesi</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\camerapic (3).jpg"></a>
+										<a href="#" class="secondarymidlinks">Dijital Video<br>Kamera</a>
+									</span>
+									<span>
+										<a href="#"><img src="img\camerapic (4).jpg"></a>
+										<a href="#" class="secondarymidlinks">Aksiyon<br>Kamera</a>
+									</span>
+								</span>
+
+								<span style="display: grid; grid-template-columns: 100%;height: 100%;">
+
+								</span>
+							</div>
+							<!--all secondary menus end-->
+
+		    			<div v-on:mouseover="showsecondarymenu = 0" class="menuitem"><img src="img\tvicon.png" class="menuimgsize"><a href="#">TV, Ses ve Görüntü Sistemleri</a><span v-if="showsecondarymenu == 0" class="triangleleft"></span></div>
+							<hr class="menuhr">
+		    			<div v-on:mouseover="showsecondarymenu = 1" class="menuitem"><img src="img\smartphoneicon.png" class="menuimgsize"><a href="#">Telefon</a><span v-if="showsecondarymenu == 1" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 2" class="menuitem"><img src="img\computericon.png" class="menuimgsize"><a href="#">Bilgisayar</a><span v-if="showsecondarymenu == 2" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 3" class="menuitem"><img src="img\fridgeicon.png" class="menuimgsize"><a href="#">Beyaz Eşya ve Ankastre</a><span v-if="showsecondarymenu == 3" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 4" class="menuitem"><img src="img\vacuumicon.png" class="menuimgsize"><a href="#">Elektrikli Ev Aletleri ve Yaşam</a><span v-if="showsecondarymenu == 4" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 5" class="menuitem"><img src="img\gameicon.png" class="menuimgsize"><a href="#">Oyun Konsolları, Hobi ve Eğlence</a><span v-if="showsecondarymenu == 5" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 6" class="menuitem"><img src="img\disneyicon.png" class="menuimgsize"><a href="#">Disney Collection</a><span v-if="showsecondarymenu == 6" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 7" class="menuitem"><img src="img\houseicon.png" class="menuimgsize"><a href="#">Akıllı Ev ve Güvenlik Sistemleri</a><span v-if="showsecondarymenu == 7" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 8" class="menuitem"><img src="img\dryericon.png" class="menuimgsize"><a href="#">Kişisel Bakım ve Sağlık</a><span v-if="showsecondarymenu == 8" class="triangleleft"></span></div>
+							<hr class="menuhr">
+							<div v-on:mouseover="showsecondarymenu = 9" class="menuitem" style="margin-bottom: 50px;"><img src="img\cameraicon.png" class="menuimgsize"><a href="#">Fotoğraf Makinesi ve Kamera</a><span v-if="showsecondarymenu == 9" class="triangleleft"></span></div>
+		  			</div>
+					</span>
+
+					<span v-on:mouseleave="showmenu2 = false">
+						<a v-on:mouseover="showmenu2 = true" class="navlinks" style="z-index: 5;display: block;" href="#">MARKALAR</a>
+						<div v-if="showmenu2" class="markalarmenu">
+							<div style="font-family: sans-serif; font-size: 15px; font-weight: bold; margin-bottom: 30px;">Öne Çıkan Markalar</div>
+							<div style="display: grid;grid-template-columns: 16.8% 16.8% 16.8% 16.8% 16.8% 16.8%;">
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (5).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 35%;">Apple</a>
+								</span>
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (2).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 30%;">Samsung</a>
+								</span>
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (3).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 35%;">Huawei</a>
+								</span>
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (6).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 35%;">Monster</a>
+								</span>
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (1).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 35%;">Preo</a>
+								</span>
+								<span>
+									<button style="border-style: solid;border-width: 1px;width: 177px;height: 101px;background-color: white;"><img src="img\brandlogos (4).png"></button><br>
+									<a href="#" class="sl" style="font-size: 14px;position: relative;left: 35%;">Philips</a>
+								</span>
+							</div><br><br>
+
+							<hr class="menuhr"><br><br>
+							<a href="#" style="margin-left: 45%;"><img src="img\oppo.svg" style="width: 90px;"></a><br><br><br>
+							<hr class="menuhr">
+
+						</div>
+					</span>
+
 					<a class="navlinks" href="#">KAMPANYALAR</a>
 					<p> </p>
-					<a class="navlinks2" href="#">Üye Ol</a>
-					<a class="loginlink" href="#">Üye Girişi</a>
+					<a class="navlinks2" href="uyegirisi\uyegirisi.html">Üye Ol</a>
+
+					<a class="loginlink" href="uyegirisi\uyegirisi.html"><img src="img\loginicon.png" style="width: 25px;"><span style="margin-top: 6px;">Üye Girişi</span></a>
 				</div>
+
+				<div v-if="showmenu || showmenu2" class="darkoverlay"></div>
 
 				<div class="someotherlinks">
 					<p> </p>
@@ -82,83 +681,39 @@
 				</div>
 
 				<div class="discounts">
-					<a v-on:mouseover="setVisible0" class="discountlink" href="#"><img src="img\sepetteindirimlogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible1" class="discountlink" href="#"><img src="img\haftanınurunulogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible2" class="discountlink" href="#"><img src="img\60aylogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible3" class="discountlink" href="#"><img src="img\iphonelogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible4" class="discountlink" href="#"><img src="img\huaweilogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible5" class="discountlink" href="#"><img src="img\sharplogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible6" class="discountlink" href="#"><img src="img\monsterlogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible7" class="discountlink" href="#"><img src="img\lglogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible8" class="discountlink" href="#"><img src="img\goprologo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible9" class="discountlink" href="#"><img src="img\lglogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible10" class="discountlink" href="#"><img src="img\egiticirobotlogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible11" class="discountlink" href="#"><img src="img\asuslogo.jpg" style="width: 60px;height: 45px;"></a>
-					<a v-on:mouseover="setVisible12" class="discountlink" href="#"><img src="img\philipslogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 0" class="discountlink" href="#"><img src="img\sepetteindirimlogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 1" class="discountlink" href="#"><img src="img\haftanınurunulogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 2" class="discountlink" href="#"><img src="img\60aylogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 3" class="discountlink" href="#"><img src="img\iphonelogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 4" class="discountlink" href="#"><img src="img\huaweilogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 5" class="discountlink" href="#"><img src="img\sharplogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 6" class="discountlink" href="#"><img src="img\monsterlogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 7" class="discountlink" href="#"><img src="img\lglogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 8" class="discountlink" href="#"><img src="img\goprologo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 9" class="discountlink" href="#"><img src="img\lglogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 10" class="discountlink" href="#"><img src="img\egiticirobotlogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 11" class="discountlink" href="#"><img src="img\asuslogo.jpg" style="width: 60px;height: 45px;"></a>
+					<a v-on:mouseover="visnum = 12" class="discountlink" href="#"><img src="img\philipslogo.jpg" style="width: 60px;height: 45px;"></a>
 				</div>
 
-				<a class="tenpercent" href="#"><img src="img\ghost_kategori_ing_190730.jpg"></a>
+				<a class="tenpercent" href="#"><img src="img\ghost_kategori_ing_190730.jpg" style="width: 80%;"></a>
 
-				<div class="tenpercent gununfirsatlari" style="margin-bottom: 15px;">
-					<p style="font-size: 19px;padding-top: 25px;padding-bottom: 10px;padding-left: 3%;"><b>Günün Fırsatları</b></p>
-					<hr>
+				<sliding-menu :pref="false" img0="img/f0.png" img1="img/f1.png" img2="img/f2.png" img3="img/f3.png" img4="img/f4.png" img5="img/f5.png" img6="img/f6.png" img7="img/f0.png" img8="img/f7.png" img9="img/f8.png" title="Günün Fırsatları"></sliding-menu>
 
-					<div v-if="firsatvisnum == 0" style="display: grid;grid-template-columns: 20% 20% 20% 20% 20%;">
-						<a class="brdr" href="#"><img src="img\f0.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f1.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f2.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f3.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f4.png" class="boxshadow"></a>
-					</div>
-
-					<div v-if="firsatvisnum == 1" style="display: grid;grid-template-columns: 20% 20% 20% 20% 20%;">
-						<a class="brdr" href="#"><img src="img\f5.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f6.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f0.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f7.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f8.png" class="boxshadow"></a>
-					</div>
-
-					<button v-on:click="setFirsatVisPrev" class="button" style="position: relative;top: -200px;"><b><</b></button>
-					<button v-on:click="setFirsatVisNext" class="button" style="position: relative;top: -200px;left: 1105px;"><b>></b></button>
-				</div>
-
-				<a class="tenpercent" href="#"><img src="img\bant_180plus_190911.jpg"></a>
+				<a class="tenpercent" href="#"><img src="img\bant_180plus_190911.jpg" style="width: 80%;"></a>
 
 				<div class="gridlinks" style="margin-left: 10%;margin-right: 10%;">
-					<a href="#"><img src="img\widget0.jpg"></a>
-					<a href="#"><img src="img\widget1.jpg"></a>
-					<a href="#"><img src="img\widget2.jpg"></a>
-					<a href="#"><img src="img\widget3.jpg"></a>
-					<a href="#"><img src="img\widget4.jpg"></a>
-					<a href="#"><img src="img\widget5.jpg"></a>
+					<a href="#"><img src="img\widget0.jpg" style="width: 100%;"></a>
+					<a href="#"><img src="img\widget1.jpg" style="width: 100%;"></a>
+					<a href="#"><img src="img\widget2.jpg" style="width: 100%;"></a>
+					<a href="#"><img src="img\widget3.jpg" style="width: 100%;"></a>
+					<a href="#"><img src="img\widget4.jpg" style="width: 100%;"></a>
+					<a href="#"><img src="img\widget5.jpg" style="width: 100%;"></a>
 				</div>
 
-				<img src="img\bant_kategori_bonus_tv_190614_.jpg" class="tenpercent">
+				<img src="img\bant_kategori_bonus_tv_190614_.jpg" class="tenpercent" style="width: 80%;">
 
-				<div class="tenpercent gununfirsatlari" style="margin-bottom: 15px;">
-					<p style="font-size: 19px;padding-top: 25px;padding-bottom: 10px;padding-left: 3%;"><b>Bu Ürünler Çok Popüler</b></p>
-					<hr>
-
-					<div v-if="popularvisnum == 0" style="display: grid;grid-template-columns: 20% 20% 20% 20% 20%;">
-						<a class="brdr" href="#"><img src="img\p0.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\p1.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\p2.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\p3.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\p4.png" class="boxshadow"></a>
-					</div>
-
-					<div v-if="popularvisnum == 1" style="display: grid;grid-template-columns: 20% 20% 20% 20% 20%;">
-						<a class="brdr" href="#"><img src="img\f1.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f6.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f0.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f3.png" class="boxshadow"></a>
-						<a class="brdr" href="#"><img src="img\f8.png" class="boxshadow"></a>
-					</div>
-
-					<button v-on:click="setPopularVisPrev" class="button" style="position: relative;top: -200px;"><b><</b></button>
-					<button v-on:click="setPopularVisNext" class="button" style="position: relative;top: -200px;left: 1105px;"><b>></b></button>
-				</div>
+				<sliding-menu :pref="false" img0="img/f0.png" img1="img/f1.png" img2="img/f2.png" img3="img/f3.png" img4="img/f4.png" img5="img/f1.png" img6="img/f6.png" img7="img/f0.png" img8="img/f3.png" img9="img/f8.png" title="Bu Ürünler Çok Popüler"></sliding-menu>
 			</div>
 
 			<div style="margin-top: 30px;" class="tenpercent">
@@ -195,35 +750,35 @@
 					<p class="smalltext"> </p>
 				</div>
 			</div>
-			<hr>
+			<hr class="menuhr">
 
 			<div class="tenpercent" style="display: grid; grid-template-columns: 20% 20% 20% 20% 20%;margin-top: 35px;margin-bottom: 35px;">
 				<span style="display: grid;grid-template-columns: 15% 85%;">
-					<a href="#"><img src="img\phoneicon.png" style="width: 64px;height: 64px;"></a>
+					<span class="largebuttons"><img class="largebuttonsimg" src="img\phoneicon.png"></span>
 					<a class="helplinks" href="#">Müşteri Hizmetleri<br>0850 222 55 99</a>
 				</span>
 
 				<span style="display: grid;grid-template-columns: 15% 85%;">
-					<a href="#"><img src="img\magazalaricon.png" style="width: 64px;height: 64px;"></a>
+					<span class="largebuttons"><img class="largebuttonsimg" src="img\magazalaricon.png"></span>
 					<a class="helplinks" href="#">Mağazalarımız</a>
 				</span>
 
 				<span style="display: grid;grid-template-columns: 15% 85%;">
-					<a href="#"><img src="img\helpicon.png" style="width: 64px;height: 64px;"></a>
+					<span class="largebuttons"><img class="largebuttonsimg" src="img\helpicon.png"></span>
 					<a class="helplinks" href="#">Yardım Merkezi</a>
 				</span>
 
 				<span style="display: grid;grid-template-columns: 15% 85%;">
-					<a href="#"><img src="img\iadeicon.png" style="width: 64px;height: 64px;"></a>
+					<span class="largebuttons"><img class="largebuttonsimg" src="img\iadeicon.png"></span>
 					<a class="helplinks" href="#">Garanti & İade</a>
 				</span>
 
 				<span style="display: grid;grid-template-columns: 1% 95%;">
-					<a href="#"><img src="img\iletisimicon.png" style="width: 64px;height: 64px;"></a>
+					<span class="largebuttons"><img class="largebuttonsimg" src="img\iletisimicon.png"></span>
 					<a class="helplinks" href="#">İletişim</a>
 				</span>
 			</div>
-			<hr>
+			<hr class="menuhr">
 
 			<div class="tenpercent">
 				<p class="bottomtext">Türkiye’de teknoloji denildiğinde akla ilk gelen isim olmayı başaran Teknosa, kurulduğu 25 Temmuz 2000 tarihinden itibaren onlarca kategoride sunduğu yüz binlerce ürün ile üstün hizmet
@@ -351,18 +906,24 @@
 						</span>
 					</div>
 				</div>
+
+				<button v-on:click="toggleFooter" class="smileybutton" style="color: white;font-size: 15px;"><b>{{footerbuttontext}}</b></button>
 			</div>
 
-			<div style="position: relative;">
-				<hr style="border-top: 4px solid rgb(34,58,141);width: 100%;position:absolute;">
-				<img src="img\sabanci-logo.png" style="width: 39px;height: 20px;position:absolute;margin-left: 48.6%">
-			</div>
+			<div v-if="showfooter">
+				<div style="position: relative;">
+					<hr style="border-top: 4px solid rgb(34,58,141);width: 100%;position:absolute;">
+					<img src="img\sabanci-logo.png" style="width: 39px;height: 20px;position:absolute;margin-left: 48.6%">
+				</div>
 
-			<div class="tenpercent" style="margin-top: 30px;margin-bottom: 35px;display: grid;grid-template-columns: 77.5% 8.8% 8.8% 8.8%;">
-				<p style="font-size: 14px;color: rgb(119,119,119);">Copyright © 2000-2019 <b>Teknosa.com</b>,Her hakkı saklıdır.</p>
-				<img src="img\verisign-logo.png">
-				<img src="img\credit-card-mastercard.png" style="margin-top: 8px;">
-				<img src="img\troy-logo.png" style="margin-top: 8px;">
+				<br>
+
+				<div class="tenpercent" style="margin-top: 13px;margin-bottom: 35px;display: grid;grid-template-columns: 77.5% 8.8% 8.8% 8.8%;">
+					<p style="font-size: 14px;color: rgb(119,119,119);">Copyright © 2000-2019 <b>Teknosa.com</b>,Her hakkı saklıdır.</p>
+					<img src="img\verisign-logo.png">
+					<img src="img\credit-card-mastercard.png" style="margin-top: 8px;">
+					<img src="img\troy-logo.png" style="margin-top: 8px;">
+				</div>
 			</div>
 		</div>
 

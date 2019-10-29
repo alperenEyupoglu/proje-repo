@@ -1,0 +1,52 @@
+.asamalinks{
+	color: white;
+	font-size: 25px;
+	width: 45px;
+	height: 45px;
+	margin-left: 28px;
+	background-color: rgb(163,155,139);
+	text-decoration: none;
+}
+
+.asamalinks:link, .asamalinks:visited{
+	background-color: rgb(163,155,139);
+}
+
+.asamalinks:hover, .asamalinks:active{
+	background-color: rgb(163,155,139);
+}
+
+.sepettext{
+	font-size: 13px;
+	color: rgb(163,155,139);
+}
+
+.xbutton{
+	background-color: rgba(0,0,0,0);
+	border-style: none;
+	color: rgba(0,0,0,0.2);
+	font-size: 20px;
+	outline: 0;
+}
+
+.xbutton:hover{
+	color: rgba(0,0,0,1);
+}
+
+.uygulabuttonclass{
+	color: white;
+	font-size: 14px;
+	border-style: solid;
+	border-radius: 1px;
+	border-color: rgb(163,155,139);
+	background-color: rgb(163,155,139);
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+	width: 110px;
+	height: 40px;
+	outline: 0;
+}
+
+.uygulabuttonclass:hover{
+	background-color: rgb(140,130,111);
+	border-color: rgb(140,130,111);
+}
