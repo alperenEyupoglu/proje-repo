@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Cep Telefonu ve Modelleri | Teknosa</title>
+		<link rel="stylesheet" href="..\s.css">
+		<link rel="stylesheet" href="telefonmodel.css">
+		<link rel="stylesheet" href="../uyegirisi/uyegirisi.css">
+		<link rel="icon" href="..\img\favicon-32x32.png">
+		<script src="..\vuejs\vue.js"></script>
+	</head>
+	<body style="font-family: proxima-nova, sans-serif;font-style: normal;">
+		<div id="indexscript">
+			<scroll-button></scroll-button>
+			<smiley-button :pref="true"></smiley-button>
+
+			<custom-header :pref="true"></custom-header>
+
+			<div style="background-color: rgb(243,243,243);overflow: hidden;">
+				<navbar :pref="true"></navbar>
+
+				<div style="margin-left: 10%;margin-right: 10%;overflow: hidden;">
+					<br>
+					<a href="../index.html" class="mainpagelink">Ana Sayfa </a>
+					<span style="font-size: 14px;">/ Telefon / Cep Telefonu</span>
+					<br><br><br>
+
+					<div style="width: 265px;float: left;">
+						<div class="gununfirsatlari" style="width: 265px;height: 70px;box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);">
+							<br><span style="font-size: 21px;"><b>&nbsp&nbsp Telefon Fiyatları</b></span>
+						</div>
+
+						<div v-on:click="togglestyle = !togglestyle" class="clickdropmenus" :style="togglestyle ? 'height: 200px;' : 'height: 35px;'">
+							<div style="text-align: left;"><b style="font-size: 14px;">KATEGORİLER &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp &nbsp &nbsp &nbsp V</b></div>
+							<div style="margin-top: 30px;">
+								<button v-if="togglestyle" class="clickdropbuttons"><b>Android Telefonlar</b></button>
+								<button v-if="togglestyle" class="clickdropbuttons"><b>iPhone iOS Telefonlar</b></button>
+								<button v-if="togglestyle" class="clickdropbuttons"><b>Diğer Telefonlar</b></button>
+							</div>
+						</div>
+
+						<clickdrop-menu title="MARKALAR" :options="['APPLE (49)','SAMSUNG (44)','HUAWEI (29)','XIAOMI (27)','OPPO (20)','CASPER (17)','VESTEL (13)','ALCATEL (10)','GENERAL MOBILE (8)','REEDER (3)','PHILIPS (1)']"></clickdrop-menu>
+						<clickdrop-menu title="FİYAT" :options="['500-1.000 TL Arası (20)','1.000-2.500 TL Arası (96)','2.500-4.000 TL Arası (35)','4.000-5.500 TL Arası (12)','5.500-7.500 TL Arası (18)','250-500 TL Arası (5)','7.500 TL Üzeri (38)']"></clickdrop-menu>
+						<clickdrop-menu title="RENK" :options="['Siyah (57)','Mavi (48)','Beyaz (20)','Altın (19)','Kırmızı (14)']"></clickdrop-menu>
+						<clickdrop-menu title="ÖN KAMERA ÇÖZÜNÜRLÜĞÜ" :options="['8MP (45)','7MP (33)','5MP (25)','16MP (24)','13MP (18)','32MP (15)','12MP (12)','10MP (11)','24MP (9)','20MP (6)','25MP (5)','2MP (1)']"></clickdrop-menu>
+						<clickdrop-menu title="ÖN KAMERA" :options="['Tek Kamera (198)','Çift Yönlü Kamera (6)']"></clickdrop-menu>
+						<clickdrop-menu title="İŞLETİM SİSTEMİ YAZILIMI" :options="['Android 9.0 (85)','Android 8.1 (23)','IOS 12 (19)','Android 8.0 (13)','IOS 10 (12)','IOS 13 (12)','IOS 11 (6)','Android 7.1 (1)']"></clickdrop-menu>
+						<clickdrop-menu title="İŞLEMCİ AİLESİ" :options="['Qualcomm Snapdragon (54)','Apple (49)','MediaTek (41)','Hi-Silicon (20)','Samsung Exynos (2)','Cortex (1)','Qualcomm (1)','Unisoc (1)']"></clickdrop-menu>
+						<clickdrop-menu title="DAHİLİ HAFIZA" :options="['64GB (71)','32GB (56)','128GB (38)','256GB (27)','16GB (14)','512GB (1)','8GB (1)']"></clickdrop-menu>
+						<clickdrop-menu title="ARKA KAMERA" :options="['Çift Yönlü Kamera (94)','Tek Kamera (51)','Üçlü Kamera (45)','Quad Kamera (19)']"></clickdrop-menu>
+						<clickdrop-menu title="STOK DURUMU" :options="['Stoklu Ürünler (174)']"></clickdrop-menu>
+						<clickdrop-menu title="EKRAN BOYUTU" :options="['6.1&quot (18)','6.3&quot (17)','6.4&quot (17)','6.5&quot (16)','5.8&quot (15)','5.5&quot (14)','6.2&quot (14)','6.22&quot (11)','4.7&quot (10)','6.26&quot (8)','2.4&quot (6)','5.7&quot (6)','6.7&quot (6)','5.71&quot (5)',
+						'6.21&quot (5)','5&quot (4)','5.65&quot (4)','6.39&quot (4)','6.088&quot (3)','6.09&quot (3)','6.15&quot (3)','6.18&quot (3)','6.47&quot (3)','6.53&quot (3)','6.59&quot (3)','6.8&quot (3)','5.45&quot (2)','5.99&quot (2)','6.01&quot (2)','6.41&quot (2)',
+						'6.6&quot (2)','1.8&quot (1)']"></clickdrop-menu>
+					</div>
+
+					<div class="resultsbox">
+						<div style="margin: 30px;">
+							<span style="font-size: 14px;"><b>Cep Telefonu</b> için 224 ürün bulundu</span>
+
+							<div style="float: right;display: grid;grid-template-columns: 100%;">
+								<img v-on:click="mode = true" src="../img/list.png" class="buttoncontainer" :style="mode ? 'background-color: rgb(0,87,174);' : 'background-color: rgb(200,200,200);'">
+								<div v-if="!mode" class="line"></div>
+							</div>
+							<div style="float: right;display: grid;grid-template-columns: 100%;">
+								<img v-on:click="mode = false" src="../img/grid.png" class="buttoncontainer" :style="mode ? 'background-color: rgb(200,200,200);' : 'background-color: rgb(0,87,174);'">
+								<div v-if="mode" class="line" style="left: 48px;"></div>
+							</div>
+
+							<select class="textboxesgeneral textboxes" style="float: right;">
+								<option disabled>SEÇİNİZ</option>
+								<option>EN POPÜLER</option>
+								<option>İSME GÖRE (A-Z)</option>
+								<option>İSME GÖRE (Z-A)</option>
+								<option>FİYATA GÖRE (ARTAN)</option>
+								<option>FİYATA GÖRE (AZALAN)</option>
+							</select>
+						</div>
+
+						<hr class="menuhr">
+
+						<div v-if="page == 1">
+							<div v-if="!mode" style="display: grid;grid-template-columns: 25% 25% 25% 25%;">
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Beyaz Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</item>
+
+							</div>
+
+							<div v-if="mode">
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Beyaz Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+							</div>
+						</div>
+
+						<div v-if="page == 2">
+							<div v-if="!mode" style="display: grid;grid-template-columns: 25% 25% 25% 25%;">
+								<item :sale="false" :oldprice="1" :reducedprice="8599" image="../img/item5.jpg">Apple iPhone 11 256GB Red Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Beyaz Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="8599" image="../img/item5.jpg">Apple iPhone 11 256GB Red Akıllı Telefon</item>
+
+							</div>
+
+							<div v-if="mode">
+								<hitem :sale="false" :oldprice="1" :reducedprice="8599" image="../img/item5.jpg">Apple iPhone 11 256GB Red Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="8599" image="../img/item5.jpg">Apple iPhone 11 256GB Red Akıllı Telefon</hitem>
+							</div>
+						</div>
+
+						<div v-if="page == 3">
+							<div v-if="!mode" style="display: grid;grid-template-columns: 25% 25% 25% 25%;">
+								<item :sale="true" :oldprice="4499" :reducedprice="4099" image="../img/item7.png">Samsung Galaxy A80 A805F Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Beyaz Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</item>
+								<item :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</item>
+								<item :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</item>
+								<item :sale="true" :oldprice="4499" :reducedprice="4099" image="../img/item7.png">Samsung Galaxy A80 A805F Siyah Akıllı Telefon</item>
+
+							</div>
+
+							<div v-if="mode">
+								<hitem :sale="true" :oldprice="4499" :reducedprice="4099" image="../img/item7.png">Samsung Galaxy A80 A805F Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Kırmızı Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="2499" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="2599" :reducedprice="1999" image="../img/item4.jpg">Huawei Y9 Prime 2019 128 GB Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1399" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item1.jpg">Oppo A5S 3GB Ram 32GB Siyah Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="1599" :reducedprice="1499" image="../img/item3.jpg">Huawei Y6 2019 Amber Brown Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="869" image="../img/item0.jpg">Samsung Galaxy A30S A307F Yeşil Akıllı Telefon</hitem>
+								<hitem :sale="false" :oldprice="1" :reducedprice="3499" image="../img/item2.jpg">Huawei P30 Lite 128 GB Peacock Blue Akıllı Telefon</hitem>
+								<hitem :sale="true" :oldprice="4499" :reducedprice="4099" image="../img/item7.png">Samsung Galaxy A80 A805F Siyah Akıllı Telefon</hitem>
+							</div>
+						</div>
+
+						<div style="margin-top: 10px;margin-bottom: 10px;margin-left: 35%;">
+							<button v-on:click="if(page > 1)page--;" class="pagebuttonsinactive" style="font-size: 18px;"><b><</b></button>
+
+							<button v-on:click="page = 1" :class="(page == 1) ? 'pagebuttonsactive' : 'pagebuttonsinactive'"><b>1</b></button>
+							<button v-on:click="page = 2" :class="(page == 2) ? 'pagebuttonsactive' : 'pagebuttonsinactive'"><b>2</b></button>
+							<button v-on:click="page = 3" :class="(page == 3) ? 'pagebuttonsactive' : 'pagebuttonsinactive'"><b>3</b></button>
+							<button v-on:click="" :class="(page == 4) ? 'pagebuttonsactive' : 'pagebuttonsinactive'"><b>4</b></button>
+							<button v-on:click="" :class="(page == 5) ? 'pagebuttonsactive' : 'pagebuttonsinactive'"><b>5</b></button>
+
+							<button v-on:click="if(page < 3)page++;" class="pagebuttonsinactive" style="font-size: 18px;"><b>></b></button>
+						</div>
+
+					</div>
+				</div>
+
+				<div style="margin-left: 20.5%;margin-right: 2%;">
+					<sliding-menu :pref="true" img0="img/f6.png" img1="img/f1.png" img2="img/f2.png" img3="img/f3.png" img4="img/f4.png" img5="img/f1.png" img6="img/f0.png" img7="img/f2.png" img8="img/f3.png" img9="img/f8.png" title="Kategorinin Çok Satanları"></sliding-menu>
+				</div>
+
+				<div class="resultsbox2" :style="readmore ? 'height: 800px;' : 'height: 300px;'">
+					<div v-on:click="devambutton()"><b style="float: right;font-size: 12px;">{{devamtext}}</b></div>
+						<h2>Cep Telefonu modelleri</h2>
+						<p style="font-size: 13px;">Cep telefonları gelişen teknoloji ile birlikte artık günümüz modern çağının vazgeçilmez teknolojik ürünleri arasına
+							girmiştir. Çeşitli marka ve modellerde üretilen akıllı cihazlara ulaşmak ise oldukça kolay. Gerek e-ticaret sitelerinden gerekse teknolojik
+							ürünler satan mağazalardan bu cihazlara sahip olmak mümkündür. Akıllı telefonlar hayatı kolaylaştırma konusunda işimizi görmekte, iletişimi
+							bir tık uzağa taşımaktadır. Aynı şekilde akıllı telefonlar aracılığıyla eğlenceli uygulama ve içeriklere göz atabilir, sosyal medyada iletişim
+							ağlarını geliştirebilir, sanat ve kültür aktiviteleri hakkında rahatlıkla bilgi edinebiliriz. Android ve iOS işletim sistemlerinden herhangi
+							birini tercih ederek, uygun fiyatlarda akıllı telefonlara ulaşılabilir.</p>
+						<img src="../img/item6.jpg" style="height: 150px;float: left;">
+						<h2>En yeni akıllı telefonlar hangileridir?</h2>
+						<p style="font-size: 13px;">Gelişen teknoloji ağı ile birlikte akıllı telefonlar üretilmiş ve beklenen talebi karşılayarak, her sene daha
+							yenileri de üretilmeye devam etmiştir. Çeşitli model, çeşitli marka ve işletim seçenekleri sunması dolayısıyla akıllı telefonlara rağbet
+							 gün geçtikçe artmaktadır. Günümüz teknoloji çağında akıllı telefon kullanmayan insan oldukça azdır. Özellikle Apple ve Samsung bu konuda
+							 önemli rekabet sergilemekte olan iki büyük firmadır. Bazı firmaların teknoloji pazarından kendini çekmesi ile birlikte firmalar oluşan
+							 boşluğu doldurmak adına en yeni ve en iyi telefonu üretme telaşına girmişlerdir ve bu da her sene artan bir rekabete dönüşmüştür. iOS
+							 işletim sistemini tercih edenler için seçenekleri iPhone modelleri ile sınırlı kalsa da, Android işletim sistemi için Samsung, Huawei,
+							 Xiaomi gibi birçok firma seçeneği bulunmaktadır. Samsung Galaxy Note 10 son günlerin en çok konuşulan telefon modellerinden birisidir.
+							 Yakın zamanda Samsung tarafından pazara sunulmuş en yeni android işletim sistemli akıllı telefonlardan biridir. Bir diğer model olan
+							 Samsung Galaxy S10 hassas lazer kesim ekranıyla sonsuz ekran deneyimi sunuyor. Aynı şekilde Huawei P30 Pro yakın zamanda Huawei tarafından
+							 pazara sunulan modellerden biridir. 128 GB hafıza sunması nedeniyle oldukça tercih edilen akıllı telefonlardan biri olmuştur. Apple
+							 iPhone XS Max'da iOS işletim sistemine sahip Apple tarafından en son çıkarılan akıllı telefondur.</p><br>
+
+						<div style="display: grid;grid-template-columns: 20% 20% 20% 20% 20%;">
+							<img src="../img/apple-b.png" style="width: 40px;margin-left: 50%;">
+							<img src="../img/samsung-b.png" style="width: 150px;">
+							<img src="../img/huawei-b.png" style="width: 50px;margin-left: 30%;">
+							<img src="../img/mi-c.png" style="width: 150px;">
+							<img src="../img/oppo-b.png" style="width: 100px;">
+						</div>
+
+						<img src="../img/item0.jpg" style="height: 150px;float: left;">
+						<h2>Akıllı telefon fiyatları nelerdir?</h2>
+						<p style="font-size: 13px;">Akıllı telefon fiyatları kura bağlı larak değişkenlik göstersede Teknosa'da her zaman uygun fiyatlı akıllı
+							telefonlar da bulunmaktadır. Özellikle Teknosa'dan çok uygun fiyata akıllı telefon bulmak ve satın almak mümkündür. Vestel Venus
+							cihazları piyasadaki en uygun fiyatlı akıllı telefonlardan biridir. Markaya ve modele göre fiyatlar değişkenlik göstermektedir. Son
+							çıkan modellerden olan Huawei P30 Pro'yu benzer modellere oranla daha uygun fiyata satın alabilirsiniz.</p>
+
+						<h2>En uygun akıllı telefonlar hangileridir?</h2>
+						<p style="font-size: 13px;">En uygun akıllı telefonları genellikle Android işletim sistemli akıllı telefonlar oluşturmaktadır. Özellikle
+							Vestel firmasına ait Venus serisi en uygun akıllı telefonlardır. Genellikle Türkiye pazarında kendine alıcı bulan firma endüstriyel
+							açıdan ortalama, teknolojik açıdan ise iyi ürünler ortaya çıkarmaktadır. Bunun dışında Casper ve General Mobile firmaları da son
+							derece uygun fiyatlı akıllı telefonlar satışa sunmaktadır. Özellikle General Mobile GM serileri hem kullanışlı hem teknolojik açıdan
+							iyi hem de tasarım açısından beklentileri yüksek oranda karşılamaktadır.</p>
+				</div>
+
+				<p>_</p>
+			</div>
+
+			<bottompage :pref="true"></bottompage>
+			<custom-footer :pref="true"></custom-footer>
+
+		</div>
+
+		<script src="..\index.js"></script>
+	</body>
+</html>

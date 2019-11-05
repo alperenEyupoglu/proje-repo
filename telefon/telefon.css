@@ -1,0 +1,42 @@
+.mainpagelink:link, .mainpagelink:visited{
+	text-decoration: none;
+	color: rgb(0,0,0);
+	font-size: 14px;
+}
+
+.mainpagelink:hover, .mainpagelink:active{
+	text-decoration: underline;
+}
+
+.phonepagediv{
+	background-color: white;
+	border-color: rgb(200,200,200);
+	border-style: solid;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-radius: 1px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+}
+
+.ll{
+	color:black;
+	font-size: 19px;
+	text-decoration: none;
+	position: relative;
+	/*left: 340px;*/
+	/*top: -200px;*/
+}
+
+.ll2:link, .ll2:visited{
+	color: rgb(0,102,192);
+	font-size: 13px;
+	text-decoration: none;
+	position: relative;
+	left: 340px;
+	top: -200px;
+}
+
+.ll2:hover, .ll2:active{
+	text-decoration: underline;
+}

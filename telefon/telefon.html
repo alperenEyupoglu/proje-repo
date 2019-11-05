@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Telefon Fiyatları ve Özellikleri | Teknosa</title>
+		<link rel="stylesheet" href="..\s.css">
+		<link rel="stylesheet" href="telefon.css">
+		<link rel="icon" href="..\img\favicon-32x32.png">
+		<script src="..\vuejs\vue.js"></script>
+	</head>
+	<body style="font-family: proxima-nova, sans-serif;font-style: normal;">
+		<div id="indexscript">
+			<scroll-button></scroll-button>
+			<smiley-button :pref="true"></smiley-button>
+
+			<custom-header :pref="true"></custom-header>
+
+			<div style="background-color: rgb(243,243,243);overflow: hidden;">
+				<navbar :pref="true"></navbar>
+
+				<div style="margin-left: 10%;margin-right: 10%;">
+					<br>
+					<a href="../index.html" class="mainpagelink">Ana Sayfa </a>
+					<span style="font-size: 14px;">/ Telefon Fiyatları ve Özellikleri</span>
+					<br><br><br>
+					<span style="font-size: 30px;color: rgb(51,51,51);"><b>Telefon</b></span>
+					<br><br>
+
+					<phonesbox :pref="true" img="img/kategori_ceptelefonu.png" :type="0" :imgheight="300" mainlink="Cep Telefonu" sublink0="iPhone iOS Telefonlar" sublink1="Android Telefonlar" sublink2="Diğer Telefonlar" mainlinkaddress="../telefonmodel/telefonmodel.html"></phonesbox>
+					<phonesbox :pref="true" img="img/giyilebilir.png" :type="0" :imgheight="300" mainlink="Giyilebilir Aksesuarlar" sublink0="Akıllı Saat" sublink1="Akıllı Bileklik" sublink2="VR Gözlük" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/kilif.png" :type="1" :imgheight="200" mainlink="Kılıflar"></phonesbox>
+					<phonesbox :pref="true" img="img/powerbank.jpg" :type="1" :imgheight="200" mainlink="Powerbank" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/sarjaleti.png" :type="1" :imgheight="200" mainlink="Şarj Cihazları" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/kulaklik.jpg" :type="1" :imgheight="200" mainlink="Kulaklıklar" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/hafizakart.png" :type="2" :imgheight="100" mainlink="Hafıza Kartları" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/ekrankoruyucu.jpg" :type="2" :imgheight="100" mainlink="Ekran Koruyucuları" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/aracaksesuarları.png" :type="2" :imgheight="100" mainlink="Araç Aksesuarları" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/telsiz.png" :type="2" :imgheight="100" mainlink="Telsiz ve Masaüstü" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/apple-b.png" :type="3" :imgheight="50" :leftoffset="120" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/samsung-b.png" :type="3" :imgheight="40" :leftoffset="80" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/huawei-b.png" :type="3" :imgheight="65" :leftoffset="100" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/oppo-b.png" :type="3" :imgheight="30" :leftoffset="80" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/mi-b.png" :type="3" :imgheight="50" :leftoffset="120" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/vestel-b.png" :type="3" :imgheight="40" :leftoffset="80" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/casper-b.png" :type="3" :imgheight="40" :leftoffset="70" mainlinkaddress="#"></phonesbox>
+					<phonesbox :pref="true" img="img/asus-b.png" :type="3" :imgheight="30" :leftoffset="70" mainlinkaddress="#"></phonesbox><br>
+
+					<p>_</p>
+				</div>
+			</div>
+
+			<bottompage :pref="true"></bottompage>
+			<custom-footer :pref="true"></custom-footer>
+
+		</div>
+
+		<script src="..\index.js"></script>
+	</body>
+</html>

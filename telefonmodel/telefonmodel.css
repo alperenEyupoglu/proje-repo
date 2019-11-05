@@ -1,0 +1,168 @@
+.mainpagelink:link, .mainpagelink:visited{
+	text-decoration: none;
+	color: rgb(0,0,0);
+	font-size: 14px;
+}
+
+.mainpagelink:hover, .mainpagelink:active{
+	text-decoration: underline;
+}
+
+.clickdropmenus{
+	background-color: white;
+	border-radius: 3px;
+	height: 35px;
+	/*width: 200px;*/
+	margin-top: 2px;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+	text-align: center;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.clickdropbuttons{
+	background-color: white;
+	border-style: none;
+	color: black;
+	width: 100%;
+	height: 30px;
+	text-align: left;
+	margin-bottom: 10px;
+}
+
+.clickdropbuttons:hover{
+	background-color: rgb(163,155,139);
+	color: white;
+}
+
+.agreecheckboxb{
+	border-style: solid;
+	border-color: rgb(200,200,200);
+	border-width: 1px;
+	border-radius: 2px;
+	background-color: white;
+	outline: 0;
+	color: white;
+	padding-left: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	height: 17px;
+	width: 17px;
+}
+
+.uncheckedcheckboxb{
+	background-color: white;
+}
+
+.checkedcheckboxb{
+	background-color: rgb(255,123,0);
+	border-color: rgb(255,123,0);
+}
+
+.resultsbox{
+	background-color: white;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	float: right;
+	width: 930px;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.buttoncontainer{
+	/*float: right;*/
+	margin-left: 5px;
+}
+
+.line{
+	height: 1.5px;
+	width: 25px;
+	background-color: rgb(0,87,174);
+	position: relative;
+	left: -30px;
+	top: 10px;
+}
+
+.orangelinks:link, .orangelinks:visited{
+	text-decoration: none;
+	color: rgb(0,0,0);
+	font-size: 13px;
+}
+
+.orangelinks:hover, .orangelinks:active{
+	color: rgb(255,123,0);
+}
+
+.fakebutton{
+	float: left;
+	font-size:13px;
+	white-space: nowrap;
+	border-style: none;
+	border-radius: 50%;
+	background-color: rgb(255,123,0);
+	height: 38px;
+	width: 38px;
+	color: white;
+}
+
+.cartbutton{
+	border-style: none;
+	border-radius: 1px;
+	background-color: rgb(255,123,0);
+	/*float: right;*/
+	color: white;
+	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+}
+.cartbutton:hover{
+	background-color: rgb(204,98,0);
+}
+
+.itembox{
+	text-align: left;
+	padding: 5px 5px 5px 5px;
+	border-style: solid;
+	border-width: 0px 1px 1px 0px;
+	border-color: rgba(0,0,0,0.2);
+}
+
+.itembox:hover{
+	box-shadow: 0px 0px 15px rgba(200, 200, 200, 0.8);
+}
+
+.pagebuttonsactive{
+	background-color: rgb(255,123,0);
+	border-style: none;
+	border-radius: 50%;
+	color: white;
+	font-size: 14px;
+	width: 35px;
+	height: 35px;
+	outline: 0;
+}
+
+.pagebuttonsinactive{
+	background-color: rgba(0,0,0,0.1);
+	border-style: none;
+	border-radius: 50%;
+	color: black;
+	font-size: 14px;
+	width: 35px;
+	height: 35px;
+	outline: 0;
+}
+
+.pagebuttonsinactive:hover{
+	background-color: rgba(0,0,0,0.2)
+}
+
+.resultsbox2{
+	background-color: white;
+	box-shadow: 0px 1px 2px 0px rgba(0,0,0,0.2);
+	border-radius: 3px;
+	margin-left: 28%;
+	margin-right: 10%;
+	padding: 20px 20px 20px 20px;
+	overflow: hidden;
+}
